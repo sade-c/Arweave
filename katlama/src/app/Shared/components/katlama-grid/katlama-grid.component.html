@@ -1,1 +1,35 @@
-<p>katlama-grid works!</p>
+<ng-container *ngIf="katlamasQuery$ | async as query">
+    <ngx-masonry [options]="options">
+      <div class="card mb-3" *ngFor="let katlama of query.katlamas" ngxMasonryItem>
+        <img src="{{ imagePeerHost }}/{{ katlama.imageId }}" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ katlama.title }}</h5>
+          <div class="d-flex flex-wrap mb-3">
+            <span
+              *ngFor="let tag of katlama.tags"
+              class="badge badge-pill badge-primary mr-1"
+              >{{ tag }}</span
+            >
+          </div>
+          <small class="card-text">
+            <a
+              class="stretched-link"
+              routerLink="/u/{{ katlama.profileId }}/p/{{ katlama.id }}"
+              >See more...</a
+            >
+          </small>
+        </div>
+      </div>
+    </ngx-masonry>
+    <div *ngIf="query.loading" class="text-center mt-3">
+      <div class="skatlamaner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <div *ngIf="!query.loading && !query.atEnd" class="text-center mt-3">
+      <button class="btn btn-outline-primary" (click)="loadMoreEvent$.next(null)">
+        See more!
+      </button>
+    </div>
+  </ng-container>
+  
