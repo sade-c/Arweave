@@ -53,7 +53,7 @@ export class KatlamaService {
   async getKatlama(katlamaId: string): Promise<Katlama & WithId> {
     const katlamaTransaction = await this.arweaveClient.transactions.get(katlamaId);
 
-    const katlama = JSON.parse(atob(katlamaTransaction.data));
+    const katlama = JSON.parse(atob(katlamaTransaction.data.toString()));// todo  error?
 
     return {
       id: katlamaTransaction.id,
