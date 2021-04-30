@@ -8,13 +8,15 @@ import { JWKInterface } from 'arweave/web/lib/wallet';
   providedIn: 'root',
 })
 export class ProfileService {
-  constructor(private arweaveClient: Arweave) {}
+  constructor(public arweaveClient: Arweave) {}
 
   getProfileIdFromKey(key: JWKInterface): Promise<string> {
     return this.arweaveClient.wallets.jwkToAddress(key);
   }
 
   getProfile(profileId: string): Promise<Profile> {
-    return ArweaveId.get(profileId, this.arweaveClient);
+    
+ 
+    return ArweaveId.get(profileId, this.arweaveClient );
   }
 }
