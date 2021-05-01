@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod && arweave deploy-dir dist/pinned"
+    "deploy": "ng build --prod && arweave deploy-dir dist/katlama"
   },
   "private": true,
   "dependencies": {
