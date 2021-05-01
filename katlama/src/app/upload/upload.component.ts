@@ -19,7 +19,8 @@ export class UploadComponent implements OnInit {
   public katlamaForm = this.fb.group({
     title: ['', Validators.required],
     tags: [''],
-    url: [''],
+    destinationUrl: [''],
+    youtubeUrl: [''],
     description: [''],
   });
 
@@ -52,7 +53,8 @@ export class UploadComponent implements OnInit {
       title: formValue.title,
       profileId: this.profile.id,
       tags: (formValue.tags as string).split(',').map((t) => t.trim()),
-      destinationUrl: formValue.url,
+      destinationUrl: formValue.destinationUrl,
+      youtubeUrl: formValue.youtubeUrl,
       description: formValue.description,
     };
 

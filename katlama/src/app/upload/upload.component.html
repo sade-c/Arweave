@@ -39,7 +39,7 @@
         </ng-template>
         <ng-container *ngIf="key; else keystorePrompt">
           <div class="card-header">
-            <p class="card-title">{{ profile.name || profile.id }}</p>
+            <p class="card-title">{{  profile.id }}</p>
             <small class="text-muted"
               >Change your profile details by updating your Arweave ID
               <a
@@ -87,10 +87,18 @@
             </div>
             <div class="form-group">
               <input
-                type="url"
-                formControlName="url"
+                type="destinationUrl"
+                formControlName="destinationUrl"
                 class="form-control"
-                placeholder="Url"
+                placeholder="destinationUrl"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="youtubeUrl"
+                formControlName="youtubeUrl"
+                class="form-control"
+                placeholder="youtubeUrl"
               />
             </div>
             <div class="form-group">
