@@ -1,5 +1,4 @@
-import { ArweaveId } from 'arweave-id';
-
-export interface Profile extends ArweaveId {
+ 
+export interface Profile     {
   id?: string;
 }

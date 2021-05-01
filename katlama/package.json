@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "~11.2.11",
     "@angular/router": "~11.2.11",
     "arweave": "1.10.13",
-    "arweave-id": "git+https://github.com/ARCA-Arweave/arweave-id-v2.git",
+   
     "bootstrap": "4.6.0",
     "masonry-layout": "4.2.2",
     "ngx-masonry": "11.0.1",

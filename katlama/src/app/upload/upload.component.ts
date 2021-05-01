@@ -72,7 +72,7 @@ export class UploadComponent implements OnInit {
     const profileId = await this.profileService.getProfileIdFromKey(key);
     this.profile = {
       id: profileId,
-      ...(await this.profileService.getProfile(profileId)),
+      
     };
 
     this.loadingProfile = false;
