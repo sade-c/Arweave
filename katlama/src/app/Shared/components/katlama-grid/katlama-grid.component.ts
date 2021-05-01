@@ -23,7 +23,7 @@ export class KatlamaGridComponent implements OnInit {
   }>;
   public loadMoreEvent$ = new BehaviorSubject<any>(null);
 
-  public imagePeerHost = environment.arweaveDomain;
+  public imagePeerHost = "environment.arweaveDomain";// todo fix
 
   public options: NgxMasonryOptions = {
     gutter: 18,
